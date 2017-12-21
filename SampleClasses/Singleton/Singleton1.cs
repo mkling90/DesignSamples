@@ -27,7 +27,7 @@ namespace SampleClasses.Singleton
 
         public void DoSomething()
         {
-            //This must be threadsafe in this pattern
+            //Doing important stuff here
         }
     }
 }

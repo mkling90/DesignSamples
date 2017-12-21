@@ -4,31 +4,24 @@ using System.Text;
 
 namespace SampleClasses.Singleton
 {
+    /// <summary>
+    /// Threadsafe, no locks.  Is not 'lazy'
+    /// </summary>
     public class Singleton3
     {
-        //How to completely be lazy initialized
-        private static class SingletonHolder
-        {
-            //Threadsafe already, static initializers are threadsafe
-            internal static readonly Singleton3 instance = new Singleton3();
-            //Empty static constructor - forces initialization laziness
-            static SingletonHolder() { }
-        }
+        private static readonly Singleton3 instance = new Singleton3();
+        //alternatively, can use this...  Only is in up to date frameworks
+        private static readonly Lazy<Singleton3> lazy =
+                new Lazy<Singleton3>(() => new Singleton3());
 
-        //Threadsafe already, static initializers are threadsafe
-        //Move into the holder class for true laziness
-        //private static readonly Singleton3 instance = new Singleton3();
+        static Singleton3() { }
 
-        //Empty static constructor - forces initialization laziness
-        //If there are static methods though, they will be initialized here
-        //static Singleton3() { }
-        
         private Singleton3()
         {
             //stuff that must happen only once
         }
-        //public static Singleton3 Instance { get { return instance; } }
-        public static Singleton3 Instance { get { return SingletonHolder.instance; } }
+        public static Singleton3 Instance { get { return instance; } }
+
 
         public void DoSomething()
         {
