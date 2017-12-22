@@ -14,9 +14,8 @@ namespace TestClient
         [Test]
         public void TestDependency1()
         {
-            ConsoleLogService logSvc = new ConsoleLogService();
-            OutlookEmailService emailSvc = new OutlookEmailService();
-            Dependency1 dep = new Dependency1(logSvc, emailSvc);
+            Injector depInjector = new Injector();
+            Dependency1 dep = depInjector.CreateDependency1();
             dep.DoStuff();
         }
     }
