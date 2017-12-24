@@ -24,6 +24,10 @@ namespace SampleClasses.DependencyInjection
 
     public class OutlookEmailService : IEmailService
     {
+        public OutlookEmailService()
+        {
+
+        }
         void IEmailService.SendEmail(string message)
         {
             Console.WriteLine($"Email {message}");
