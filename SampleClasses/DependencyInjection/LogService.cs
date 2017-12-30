@@ -4,6 +4,9 @@ using System.Text;
 
 namespace SampleClasses.DependencyInjection
 {
+    public enum LogType {
+        Info, Warning, Error
+    }
     public interface ILogService
     {
         void WriteLog(string message);
@@ -11,6 +14,9 @@ namespace SampleClasses.DependencyInjection
 
     public class ConsoleLogService : ILogService
     {
+        public ConsoleLogService(LogType logType)
+        {
+        }
         void ILogService.WriteLog(string message)
         {
             Console.WriteLine(message);

@@ -11,7 +11,7 @@ namespace TestClient
     {
         public ConsoleLogService CreateLogService()
         {
-            return new ConsoleLogService();
+            return new ConsoleLogService(LogType.Info);
         }
 
         public OutlookEmailService CreateOutlookEmailService()

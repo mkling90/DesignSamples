@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientSandbox.cs" />
+    <Compile Include="DateTimeTest.cs" />
     <Compile Include="DependencyTest.cs" />
+    <Compile Include="FactoryTest.cs" />
     <Compile Include="Injector.cs" />
     <Compile Include="SingletonTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

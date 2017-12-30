@@ -14,7 +14,7 @@ namespace TestClient
     {
         public void UseDependency()
         {
-            ConsoleLogService logSvc = new ConsoleLogService();
+            ConsoleLogService logSvc = new ConsoleLogService(LogType.Info);
             OutlookEmailService emailSvc = new OutlookEmailService();
             Dependency1 dep = new Dependency1(logSvc, emailSvc);
             dep.DoStuff();
