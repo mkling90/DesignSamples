@@ -26,26 +26,34 @@ namespace SampleClasses.FactoryPattern
     {
         private readonly long ticks;
 
+        public long Ticks { get { return ticks; } }
         public BadDuration(long ticks)
         {
             this.ticks = ticks;
         }
 
-       /* public BadDuration(long milliseconds)
-        {
-            this.ticks = milliseconds * 1000;
-        }
+        /* public BadDuration(long milliseconds)
+         {
+             this.ticks = milliseconds * 1000;
+         }
 
-        public BadDuration(long seconds)
-        {
-            this.ticks = seconds * 1000 * 1000;
-        }
-        */
+         public BadDuration(long seconds)
+         {
+             this.ticks = seconds * 1000 * 1000;
+         }
+         */
 
         #region Contructor Overload Solution
+        //  Note -> if using this method, should make the constructor
+        // private so the user MUST use the factory methods
         public static BadDuration FromMilliseconds(long milliseconds)
         {
             return new BadDuration(milliseconds * 1000);
+        }
+
+        public static BadDuration FromSeconds(long seconds)
+        {
+            return new BadDuration(seconds * 1000 * 1000);
         }
         #endregion
     }
