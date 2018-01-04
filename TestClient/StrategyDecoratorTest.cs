@@ -45,5 +45,13 @@ namespace TestClient
             list.Sort(LoggingComparer.For(new Strategy.AgeComparer()));
         }
 
+        [Test]
+        public void testStrategyDecorator3()
+        {
+            // Using the inherited comparer
+            var list = People.ToList();
+            list.Sort(new Strategy2.LoggingAgeComparerBad());
+        }
+
     }
 }

@@ -37,6 +37,6 @@ namespace SampleClasses.StrategyPattern
                 return x.Age.CompareTo(y.Age);
             }
         }
-       
+
     }
 }
