@@ -18,5 +18,17 @@ namespace TestClient
             Assert.AreEqual(20000000, duration.Ticks);
         }
 
+        [Test]
+        public void MakeUser()
+        {
+
+        }
+
+        private void RegisterUser(IUserFactory userFactory)
+        {
+            ITicketHolder user = userFactory.CreateUser();
+
+        }
+
     }
 }
